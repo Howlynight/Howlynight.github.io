@@ -72,7 +72,7 @@ Though I like how my bash prompt looks like I experimented a bit with .bashrc. N
 
 I like the clear error messages as I often forget to add some attributes. That is why I include them in every script in the assignment 😄
 
-```
+``` bash
 #!/bin/bash
 if [ $# -ne 1 ]     # for error message about lack of an argument
 then
@@ -84,7 +84,7 @@ echo $1'er'
 
 Also, if script has loops it is nice to receive a message the work is done!
 
-```
+``` bash
 #!/bin/bash
 file=$1  # needed file as the first attribute
 if [ $# -ne 1 ]     # for error message about lack of a filename
@@ -98,7 +98,6 @@ do
   echo $line
 done < "$file"
 echo "Task completed"     # just a satisfaction from a work done
-
 ```
 
 A lot of ideas for automation but too little actual knowledge yet. Searching for additional tutorials is inevitable 😄
@@ -106,7 +105,8 @@ A lot of ideas for automation but too little actual knowledge yet. Searching for
 ## Week 6 Installing and Running Programs
 
 First of all, I need this alias 😄
-![alt text](link to image)
+
+<img src="assets/images/alias_for_sudo.png" alt="Alias for adding sudo to the last command" hspace="40" width="100%" align="left"/>
 
 This was a familiar topic as I use Linux for a while now. But I needed to take into account that my Fedora uses `yum` or `dnf` instead of `apt` so additional search and modifications of the commands.
 
@@ -116,10 +116,73 @@ Python virtual environments were a new concept.
 
 `python -m venv VENVNAME` - to create a vertual envoronment
 
-`sourse VENVNAME/Scripts/activate` - to activate it
+`sourse VENVNAME/bin/activate` - to activate it
+
+`deactivate` when the work is done
+
+During this week we installed packages through `pip` to work with python. The most important for linguists is of course `nltk` so `pip install nltk` it was. Everything was fine until bllipparser. I used puhti-server to do the tasks.
+
+The most interesting part was working with Makefile where we combine scripts and get the needed results just typing `make all`. Neat! We were writing a Makefile to compile a corpus from some books which included frequency lists and sentence per line with deleted Gutenberg metadata. The logic is simple:
+
+1. You define variable and provide souses
+```bash
+BOOKS=...(list of books)
+FREQLISTS=$(BOOKS:%=results/%.freq.txt)
+SENTEDBOOKS=$(BOOKS:%=results/%.sent.txt)
+NO_MD_BOOKS=$(BOOKS:%=data/%.no_md.txt)
+```
+2. You identify options and attributes, for example `all`, `clean` etc.
+3. You give the instructions in form: 
+
+   **target**: **sourse**  
+   commands to get to the target
+```bash
+# It can be python script:
+    %.no_md.txt: %.txt  
+        python3 src/remove_gutenberg_metadata.py $< > $@
+# Bashscript: 
+    results/%.freq.txt: data/%.no_md.txt 
+        src/freqlist.sh $< > $@
+# Or usual commands for bash:
+    data/all.no_md.txt: $(NO_MD_BOOKS)
+        cat $^ > $@
+```
+But you need to make sure your Makefile is in the right directory to actually work. I got problems after transfering it to different location. Otherwise, wonderful automation tool!
 
 ## Week 7 Version Control
 
+This week was about all and mighty Git. I created a new account as an old one was long forgotten. This was the first time I actually created a repository and start working with it. Of course I faced an authentication problem! Thankfully the teacher helped and push works well since.
+
+The work flow is the following:
+1. `git init` from the folder to create a repository OR `git clone URL FOLDER` to copy a repository from Git to your machine.
+2. `git branch BRANCHNAME` to create a separate branch to commit your changes not to mess with the original one
+3. `git switch BRANCHNAME` to move to a branch
+4. make changes to files (better some small chunks at a time)
+5. `git status` OR `git diff` to show changes
+6. `git add -A` to add everything to your commit OR `git add FILENAME` for adding files manually
+7. `git commit -m "MESSAGE"` commit your changes locally, won't work without a message!
+8. `git pull REPO BRANCHNAME` to get the changes from the repository before committing your part to remote.
+9. `git push (REPO BRANCHNAME)` to push your changes to remote server
+10. repeat untill everything is done and works fine
+11. `git merge BRANCHNAME` to combine your branch with main one
+12. `git branch -d BRANCHNAME` delete unneeded branch after merging
+
+Simple right? Right?
+
+It is all fun and games until you mess up, and you will do it at some point. This is where version control format of Git comes in handy! Here are some commands to undo commits:
+
+- `git reset` rather total but still, if you add filename to it you can reset individual files. You can also add SHA of the last "good" commit to reset to that point
+- `git log` command to get the list of all commits with their SHAs AND `git reflog` to see the history of changes for restoration
+- `git revert SHA` undo specific commit
+
+[More info about this see here](https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/)
+
+I learned a lot but still not quite confident in using Git and GitHub. I often mess up commands, especially `git commit` I often forget about adding a message. But gradually I get more comfortable in using GitHub.
+
 ## Final Project GitHub Pages
 
-All edits were done in KWrite, a default text editor in KDE Plazma.
+All edits were done in KWrite, a default text editor in KDE Plazma. Neither Nano nor Emacs are my gem.
+
+Creating a GitPage from a template is very easy. Some additional search for package names in dnf and everything works. Small changes to style are also not a problem. Just look through folders and files in your repository. Jekyll works fantastic. This is the reason I made commits quite rearly as I can just see all the changes right away without a hussle. I spent more time writing text on this page using [this cheatsheet for markdown format](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links) than the installation and styling together!
+
+Another headache is waiting with CV.
