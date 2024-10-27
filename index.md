@@ -4,7 +4,7 @@ layout: default
 
 ## Introduction
 
-<img src="assets/images/me.jpg" alt="My impersonation proudly going to Uni" hspace="40" width="50%" align="right"/> Hi there! This is my GitHub personal page. I do it not for my personal pleasure, I am forced to expose myself to the world just for a study project. Please, do not take this page seriously.
+<img src="assets/images/white_ai_owl.jpeg" alt="My impersonation proudly going to Uni" hspace="40" width="50%" align="right"/> Hi there! This is my GitHub personal page. I do it not for my personal pleasure, I am forced to expose myself to the world just for a study project. Please, do not take this page seriously.
 
 I am always tired working student majoring in Russian language and Literature. My interest in tech brought me to this course. Which was inadvertently right after I switched Linux! Perfect timing!
 
