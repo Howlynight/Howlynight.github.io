@@ -50,6 +50,17 @@ We were introduced to pipelines `|` and some essential text processing commands:
 
 And of course `grep` and `egrep` beasts of regular expressions. REs are cool and all but boy was it confusing. The printed cheatsheet was my hero during assignments and I still use it!
 
+Here are some basic regular expressions I found userful to know:
+
+Ancors | POSIX | Quantifiers | Groups & Ranges |
+------ | ----- | ----------- | --------------- | 
+**^** start of string | **[:upper:]** upper case letters | __*__ 0 or more | **.** any character |
+**$** end of string | **[:lower:]** lower case letters| **?** 0 or 1 | **(a pipeline b)** a or b
+**\b** word boundary | **[:alpha:]** all letters | **+** 1 or more | **[abc]** range (a or b or c)
+**\<** start of word | **[:digits:]** digits |  | **[^abc]** not (a or b or c)
+**\>** end of word | **[:punct:]** punctuation |  | **[a-q]** range from a to q
+   | **[:blank:]** space and tab |  | **{m,n}** m to n repetitions
+
 ## Week 4 Advanced Corpus Processing
 
 This week was about `sed`. I am still afraid of using it as am not confident in my knowledge. It is a rather complicated command this numbers of operators.
@@ -185,4 +196,6 @@ All edits were done in KWrite, a default text editor in KDE Plazma. Neither Nano
 
 Creating a GitPage from a template is very easy. Some additional search for package names in dnf and everything works. Small changes to style are also not a problem. Just look through folders and files in your repository. Jekyll works fantastic. This is the reason I made commits quite rearly as I can just see all the changes right away without a hussle. I spent more time writing text on this page using [this cheatsheet for markdown format](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links) than the installation and styling together!
 
-Another headache is waiting with CV.
+Another headache is waiting with CV. LaTeX and Overleaf are rather new instruments for me but templates help a lot. No way can I make such a cool looking CV from scratch!
+
+Hope you have enjoyed my rant! Have a nice day!

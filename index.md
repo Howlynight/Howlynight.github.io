@@ -4,9 +4,11 @@ layout: default
 
 ## Introduction
 
-<img src="assets/images/white_ai_owl.jpeg" alt="AI makes cool pictures!" hspace="40" width="50%" align="right"/> Hi there! This is my GitHub personal page. I do it not for my personal pleasure, I am forced to expose myself to the world just for a study project. Please, do not take this page seriously.
+<img src="assets/images/white_ai_owl.jpeg" alt="AI makes cool pictures!" hspace="40" width="40%" align="right"/> Hi there! This is my GitHub personal page. I do it not for my personal pleasure, I am forced to expose myself to the world just for a study project. Please, do not take this page seriously.
 
 I am always tired working student majoring in Russian language and Literature. My interest in tech brought me to this course. Which was inadvertently right after I switched Linux! Perfect timing!
+
+I plan to continue studying computer linguistics and programming needed for it. Maybe someday I will take part in making some language teaching app.
 
 ## Find me on
 
@@ -15,7 +17,8 @@ I am always tired working student majoring in Russian language and Literature. M
 ## My example CV
 
 [Overleaf](https://www.overleaf.com/read/hmvbvwfvmbmc#b58658)
-[PDF file]
+
+[PDF file](docs/My_CV.pdf)
 
 ## Contact
 
