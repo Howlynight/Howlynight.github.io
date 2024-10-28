@@ -12,6 +12,11 @@ I am always tired working student majoring in Russian language and Literature. M
 
 [GitHub](https://github.com/Howlynight)
 
+## My example CV
+
+[Overleaf](https://www.overleaf.com/read/hmvbvwfvmbmc#b58658)
+[PDF file]
+
 ## Contact
 
 My email address is of the form first_name.last_name@helsinki.fi. You are clever enough to figure this out, don't you. 
